@@ -158,3 +158,51 @@
   margin-top: 10px;
 }
 
+/* Styles for print */
+@media print {
+  @page {
+    margin: 0.5cm; /* Adjust margins to save space */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .certificate-container {
+    margin: 0 auto;
+    padding: 20px;
+    border: none; /* Remove border for printing */
+    box-shadow: none; /* Remove shadow for printing */
+  }
+
+  /* Landscape view */
+  @page {
+    size: landscape;
+  }
+
+  /* Adjust for landscape orientation */
+  @media print and (orientation: landscape) {
+    .certificate-container {
+      transform: scale(0.85); /* Scale down for landscape */
+      transform-origin: top left;
+      width: 100%;
+    }
+  }
+
+  /* Portrait view */
+  @media print and (orientation: portrait) {
+    .certificate-container {
+      transform: scale(0.95); /* Slightly scale down for portrait */
+      transform-origin: top left;
+      width: 100%;
+    }
+  }
+
+  /* Hide print button during print */
+  .print-button {
+    display: none;
+  }
+}
