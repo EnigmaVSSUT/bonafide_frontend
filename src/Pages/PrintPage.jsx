@@ -33,7 +33,7 @@ export const PrintPage = () => {
           if (details) {
             setStudentName(details.name || '');
             setParentName(details.parent_name || '');
-            setSemester(details.grad_year || '');
+            setSemester(details.semester || '');
             setBranch(details.branch || '');
             setProgram(details.programme || '');
             setError('');
