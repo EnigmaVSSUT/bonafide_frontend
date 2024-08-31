@@ -1,13 +1,14 @@
 .certificate-container {
-  width: 750px;
-  margin: 40px auto;
-  padding: 30px;
+  width: 48%; /* Adjusted width to fit two certificates */
+  margin: 1%; /* Margin for spacing between certificates */
+  padding: 20px; /* Adjusted padding */
   border: 2px solid #333;
   font-family: 'Georgia', serif;
   background-color: #fafafa;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  float: left; /* Float to position two certificates side by side */
 }
-
 
 .certificate-header {
   text-align: center;
@@ -17,7 +18,7 @@
 }
 
 .university-name {
-  font-size: 28px;
+  font-size: 22px; /* Adjusted font size */
   font-weight: 700;
   margin-bottom: 8px;
   text-transform: uppercase;
@@ -25,7 +26,7 @@
 }
 
 .address, .address-po {
-  font-size: 16px;
+  font-size: 14px; /* Adjusted font size */
   margin: 4px 0;
   font-weight: 500;
   font-family: 'Arial', sans-serif;
@@ -35,29 +36,29 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 16px;
+  font-size: 14px; /* Adjusted font size */
   margin-bottom: 40px;
 }
 
 .date {
-  font-size: 16px;
+  font-size: 14px; /* Adjusted font size */
   color: #555;
 }
 
 .certificate-title {
   text-align: center;
-  font-size: 30px;
+  font-size: 24px; /* Adjusted font size */
   text-transform: uppercase;
-  margin: 40px 0;
+  margin: 30px 0;
   font-weight: bold;
   letter-spacing: 1.5px;
 }
 
 .certificate-content {
-  font-size: 18px;
-  line-height: 1.8;
+  font-size: 16px; /* Adjusted font size */
+  line-height: 1.6; /* Adjusted line height */
   color: #333;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
   text-align: justify;
   font-family: 'Times New Roman', Times, serif;
 }
@@ -68,16 +69,16 @@
 
 .certificate-footer {
   text-align: right;
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 .signature {
-  font-size: 18px;
+  font-size: 16px; /* Adjusted font size */
   font-weight: bold;
   font-family: 'Arial', sans-serif;
   border-top: 1px solid #333;
-  padding-top: 15px;
-  width: 300px;
+  padding-top: 10px;
+  width: 250px; /* Adjusted width */
   margin-left: auto;
 }
 
@@ -148,38 +149,47 @@
   margin-top: 10px;
 }
 
-.certificate-container {
-  padding: 20px;
-  margin: auto;
-  box-sizing: border-box;
-}
-
 @media print {
   @page {
-    size: A4 landscape;
-    margin: 20mm;
+    size: A4 landscape; /* Landscape to fit two certificates side by side */
+    margin: 10mm; /* Adjusted margin */
   }
 
   .certificate-container {
-    transform: scale(0.85); 
+    float: none;
+    width: 50%; /* Adjusted width */
+    margin: 0;
+    padding: 15px; /* Adjusted padding */
+    transform: scale(0.85); /* Adjusted scale for printing */
     transform-origin: top left;
   }
 
   .certificate-header,
   .certificate-content,
   .certificate-footer {
-    page-break-inside: avoid; 
+    page-break-inside: avoid;
+  }
+
+  body {
+    display: flex;
+    flex-wrap: wrap; /* Allows certificates to wrap */
+    justify-content: space-between; /* Aligns the certificates */
+    margin: 0;
+    padding: 0;
   }
 }
 
 @media print and (orientation: portrait) {
   @page {
-    size: A4 portrait;
+    size: A4 portrait; /* Portrait orientation, if needed */
     margin: 15mm;
   }
 
   .certificate-container {
-    transform: scale(0.95);
+    width: 100%; /* Full width for portrait */
+    margin: 0;
+    padding: 15px;
+    transform: scale(0.95); /* Adjusted scale for portrait printing */
     transform-origin: top left;
   }
 }
