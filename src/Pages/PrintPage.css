@@ -1,93 +1,105 @@
 /* Base styles for certificates */
 .certificate-container {
-  width: 50%; /* Each certificate takes half the width */
+  width: 100%; /* Full width of the page */
+  height: 50%; /* Half the height of the page */
   margin: 0; /* No margin between certificates */
-  padding: 15px; /* Reduced padding */
+  padding: 10px; /* Reduced padding */
   border: 1px solid #333; /* Thinner border */
   font-family: 'Georgia', serif;
   background-color: #fafafa;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Reduced shadow */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Reduced shadow */
   box-sizing: border-box; /* Ensure padding and border are included in width */
   page-break-inside: avoid; /* Prevent page break inside the certificate */
-  float: left; /* Float certificates side by side */
+  page-break-after: avoid; /* Prevent page break after each certificate */
+  overflow: hidden; /* Hide overflow */
 }
 
+/* Header */
 .certificate-header {
   text-align: center;
-  margin-bottom: 10px; /* Reduced margin */
+  margin-bottom: 5px; /* Reduced margin */
   border-bottom: 1px solid #333; /* Thinner border */
-  padding-bottom: 10px; /* Reduced padding */
+  padding-bottom: 5px; /* Reduced padding */
 }
 
+/* University Name */
 .university-name {
-  font-size: 20px; /* Reduced font size */
+  font-size: 16px; /* Reduced font size */
   font-weight: 700;
-  margin-bottom: 4px; /* Reduced margin */
+  margin-bottom: 2px; /* Reduced margin */
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
+/* Address */
 .address, .address-po {
-  font-size: 14px; /* Reduced font size */
-  margin: 2px 0; /* Reduced margin */
+  font-size: 12px; /* Reduced font size */
+  margin: 1px 0; /* Reduced margin */
   font-weight: 500;
   font-family: 'Arial', sans-serif;
 }
 
+/* Certificate Number */
 .certificate-number {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 14px; /* Reduced font size */
-  margin-bottom: 20px; /* Reduced margin */
+  font-size: 12px; /* Reduced font size */
+  margin-bottom: 10px; /* Reduced margin */
 }
 
+/* Date */
 .date {
-  font-size: 14px; /* Reduced font size */
+  font-size: 12px; /* Reduced font size */
   color: #555;
 }
 
+/* Certificate Title */
 .certificate-title {
   text-align: center;
-  font-size: 22px; /* Reduced font size */
+  font-size: 18px; /* Reduced font size */
   text-transform: uppercase;
-  margin: 20px 0; /* Reduced margin */
+  margin: 15px 0; /* Reduced margin */
   font-weight: bold;
   letter-spacing: 1px;
 }
 
+/* Certificate Content */
 .certificate-content {
-  font-size: 14px; /* Reduced font size */
-  line-height: 1.5; /* Adjusted line height */
+  font-size: 12px; /* Reduced font size */
+  line-height: 1.4; /* Adjusted line height */
   color: #333;
-  margin-bottom: 30px; /* Reduced margin */
+  margin-bottom: 20px; /* Reduced margin */
   text-align: justify;
   font-family: 'Times New Roman', Times, serif;
 }
 
+/* Certificate Content Strong */
 .certificate-content strong {
   font-weight: 700;
 }
 
+/* Footer */
 .certificate-footer {
   text-align: right;
-  margin-top: 30px; /* Reduced margin */
+  margin-top: 20px; /* Reduced margin */
 }
 
 .signature {
-  font-size: 14px; /* Reduced font size */
+  font-size: 12px; /* Reduced font size */
   font-weight: bold;
   font-family: 'Arial', sans-serif;
   border-top: 1px solid #333;
-  padding-top: 10px; /* Reduced padding */
-  width: 200px; /* Reduced width */
+  padding-top: 5px; /* Reduced padding */
+  width: 150px; /* Reduced width */
   margin-left: auto;
 }
 
+/* Styles for print */
 @media print {
   @page {
-    size: A4 landscape; /* Landscape orientation to fit two certificates side by side */
-    margin: 10mm; /* Adjust margin for fitting two certificates */
+    size: A4 portrait; /* Portrait orientation for A4 */
+    margin: 5mm; /* Adjust margin for A4 paper */
   }
 
   body {
@@ -95,50 +107,53 @@
     padding: 0; /* Remove body padding */
   }
 
+  /* Ensure certificates fit on one page */
   .certificate-container {
-    width: 50%; /* Each certificate takes half the width of the page */
-    margin: 0; /* No margin between certificates */
-    padding: 15px; /* Adjusted padding */
+    height: 50%; /* Each certificate takes half the height of the page */
     float: left; /* Float certificates side by side */
-    page-break-inside: avoid; /* Prevent page break inside the certificate */
-    transform: scale(0.8); /* Scale down to fit both certificates */
-    transform-origin: top left;
+    page-break-inside: avoid; /* Prevent page break inside certificates */
+    page-break-after: auto; /* Ensure no page break after each certificate */
   }
 }
 
 
 
-
 /* Styles for the form container */
 .form-container {
-  width: 800px; /* Width of the form */
+  width: 80%; /* Adjusted width for better responsiveness */
+  max-width: 900px; /* Maximum width for larger screens */
   margin: 30px auto; /* Center the form */
-  padding: 20px; /* Adjusted padding */
+  padding: 20px; /* Adjusted padding for spacing */
   border: 1px solid #ddd; /* Light border color */
   background-color: #fff; /* White background */
   font-family: 'Arial', sans-serif; /* Consistent font */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Softer shadow */
-  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Softer and deeper shadow */
+  border-radius: 12px; /* Rounded corners */
   box-sizing: border-box; /* Include padding and border in width */
+  transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+}
+
+.form-container:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
 }
 
 /* Styles for form labels */
 .form-container label {
   display: block;
-  margin-bottom: 8px; /* Reduced margin */
+  margin-bottom: 10px; /* Slightly increased margin */
   font-weight: bold;
-  font-size: 15px; /* Slightly larger font size */
+  font-size: 16px; /* Slightly larger font size */
   color: #333; /* Darker text color */
 }
 
 /* Styles for form inputs */
 .form-container input {
   width: 100%; /* Full width of the container */
-  padding: 12px; /* Increased padding */
-  margin-top: 4px; /* Reduced margin top */
-  font-size: 15px; /* Slightly larger font size */
+  padding: 14px; /* Increased padding for better spacing */
+  margin-top: 6px; /* Slightly increased margin top */
+  font-size: 16px; /* Slightly larger font size */
   border: 1px solid #ccc; /* Light border */
-  border-radius: 4px; /* Rounded corners */
+  border-radius: 6px; /* Rounded corners */
   background-color: #f9f9f9; /* Light gray background */
   transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
@@ -164,24 +179,21 @@
   margin-top: 5px; /* Reduced margin top */
 }
 
-
 /* Styles for the print button */
 .print-button {
   display: inline-block; /* Inline-block for proper alignment */
-  width: auto; /* Auto width based on content */
   padding: 12px 24px; /* Increased padding for a larger button */
   font-size: 16px; /* Larger font size for readability */
   font-weight: 600; /* Semi-bold text for emphasis */
   color: #fff; /* White text color */
   background-color: #007bff; /* Blue background */
   border: none; /* Remove default border */
-  border-radius: 5px; /* Rounded corners */
+  border-radius: 6px; /* Rounded corners */
   cursor: pointer; /* Pointer cursor on hover */
   text-align: center; /* Center text */
   text-decoration: none; /* Remove underline for links */
   transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
-  margin-left: 47%;
-  margin-top: 5%;
+  margin-top: 20px; /* Spacing above the button */
 }
 
 .print-button:hover {
@@ -196,4 +208,3 @@
 .print-button:active {
   background-color: #004494; /* Even darker blue when button is clicked */
 }
-
